@@ -25,6 +25,8 @@ scale_color_highres <- function(numShapeLevels, colorPalette = scales::hue_pal()
         ...))
 }
 
+
+
 plot <- ggplot(data = someData, aes(x = x, y = y, color = label1, shape = label1)) +
     geom_point() +
     scale_color_highres(numShapeLevels = 2) +
