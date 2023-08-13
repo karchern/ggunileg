@@ -1,5 +1,5 @@
 library(ggplot2)
-library(tidyverse)
+library(dplyr)
 
 someData <- data.frame(x = 1:100 + runif(n = 100, min = -10, max = 10), y = 1:100 + runif(n = 100, min = -10, max = 10), label1 = sample(letters[1:10], size = 100, replace = T), label2 = sample(1:5, size = 100, replace = T)) %>%
     mutate(label2 = as.factor(label2))
