@@ -11,11 +11,11 @@ manual_pal <- function(numShapeLevels) {
     }
 }
 
-scale_color_highres <- function(numShapeLevels, ...) {
+scale_color_highres <- function(numShapeLevels, palette = scales::hue_pal(), ...) {
     list(discrete_scale(
         "color",
         scale_name = "discreteColor",
-        palette = scales::hue_pal(),
+        palette = palette,
         ...),
     discrete_scale(
         "shape",
