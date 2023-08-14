@@ -6,7 +6,7 @@ often become uninformative.
 
 ```
 some_data <- data.frame(x = 1:100 + runif(n = 100, min = -10, max = 10), y = 1:100 + runif(n = 100, min = -10, max = 10), colorLabel = sample(letters[1:20], size = 100, replace = T))
-```some_data <- data.frame(x = 1:100 + runif(n = 100, min = -10, max = 10), y = 1:100 + runif(n = 100, min = -10, max = 10), colorLabel = sample(letters[1:20], size = 100, replace = T))
+```
 
 ```
 bad_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel)) +
