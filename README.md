@@ -33,8 +33,8 @@ still_bad_plot
 ![This is a little better, but still bad since the legend is not merged](vignettes/man/still_bad_plot.png)
 
 To fix this I offer the `scale_color_highres` function as a convenience function.
-The number of distinct shape levels can be controlled using the numShapeLevels parameter.
-Note how the colorLabel variable is mapped to  both color and shape aesthetics here.
+The number of distinct shape levels can be controlled using the `numShapeLevels` parameter.
+Note how the `colorLabel` variable is mapped to both color and shape aesthetics here.
 
 ```
 better_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel, shape = colorLabel)) +
