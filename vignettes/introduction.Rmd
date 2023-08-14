@@ -32,6 +32,7 @@ bad_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel)) +
   theme_bw() +
   guides(color = guide_legend(ncol = 2))
 bad_plot
+ggsave(plot = bad_plot, filename = "man/bad_plot.png", dpi = 300, width = 6, height = 5)
 ```
 
 One potential solution is to combine color- and shape scales, but this is not really helping out of the box
@@ -45,6 +46,7 @@ still_bad_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel,
   theme_bw() +
   guides(color = guide_legend(ncol = 2))
 still_bad_plot
+ggsave(plot = still_bad_plot, filename = "man/still_bad_plot.png", dpi = 300, width = 6, height = 5)
 ```
 
 To fix this I offer the scale_color_highres function as a convenience function.
@@ -55,7 +57,8 @@ Note how the colorLabel variable is mapped to  both color and shape aesthetics h
 better_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel, shape = colorLabel)) +
   geom_point() +
   theme_bw() +
-  ggunileg::scale_color_highres(numShapeLevels = 5) +
+  ggunileg::scale_color_highres(numShapeLevels = 5, name = 'newLegendTitle') +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2))
 better_plot
+ggsave(plot = better_plot, filename = "man/better_plot.png", dpi = 300, width = 6, height = 5)
 ```
