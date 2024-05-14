@@ -21,7 +21,7 @@ scale_color_highres <- function(num_shape_levels, color_palette = scales::hue_pa
         discrete_scale(
             "color",
             scale_name = "discreteColor",
-            palette = colorPalette,
+            palette = color_palette,
             ...
         ),
         discrete_scale(
