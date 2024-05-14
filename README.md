@@ -34,21 +34,54 @@ still_bad_plot
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 To fix this I offer the `scale_color_highres` function as a convenience
-function. The number of distinct shape levels can be controlled using
-the `numShapeLevels` parameter. Note how the color_label variable is
-mapped to both color and shape aesthetics here.
+function. Note how the `shape_label` does not get used here, instead the
+initial `color_label` variable is mapped to both color and shape
+aesthetics here.
+
+``` r
+library(ggunileg)
+# No need to for this.
+some_data$shape_label <- NULL
+useful_plot <- ggplot(data = some_data, aes(x = x, y = y, color = color_label, shape = color_label)) +
+  geom_point() +
+  theme_bw() +
+  scale_color_highres() +
+  guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2))
+useful_plot
+```
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+The number of distinct shape levels can be controlled using the
+`num_shape_levels` parameter which expects an intenger. In this case,
+shapes default to (in my opinion) nice-looking shapes.
 
 ``` r
 library(ggunileg)
 useful_plot <- ggplot(data = some_data, aes(x = x, y = y, color = color_label, shape = color_label)) +
   geom_point() +
   theme_bw() +
-  scale_color_highres(num_shape_level = 5, name = 'Combined legend!') +
+  scale_color_highres(num_shape_level = 7, name = 'Also a\nnew name') +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2))
 useful_plot
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Alternatively you can control the shapes itself with the `shape_values`
+which gets repeated for each .
+
+``` r
+library(ggunileg)
+useful_plot <- ggplot(data = some_data, aes(x = x, y = y, color = color_label, shape = color_label)) +
+  geom_point() +
+  theme_bw() +
+  scale_color_highres(shape_values = c(18, 3, 5, 7), name = 'Also a\nnew name') +
+  guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2))
+useful_plot
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 # Installation
 
