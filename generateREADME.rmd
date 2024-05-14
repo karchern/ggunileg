@@ -50,7 +50,7 @@ useful_plot <- ggplot(data = some_data, aes(x = x, y = y, color = color_label, s
 useful_plot
 ```
 
-Alternatively you can control the shapes itself with the `shape_values` which gets repeated for each . 
+Alternatively you can control the shapes itself with the `shape_values` which gets recycled. 
 
 ```{r}
 library(ggunileg)
