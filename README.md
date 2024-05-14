@@ -43,9 +43,14 @@ library(ggunileg)
 useful_plot <- ggplot(data = some_data, aes(x = x, y = y, color = colorLabel, shape = colorLabel)) +
   geom_point() +
   theme_bw() +
-  scale_color_highres(numShapeLevels = 5, name = 'newLegendTitle') +
+  scale_color_highres(num_shape_level = 5, name = 'Better legend') +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2))
 useful_plot
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+# Installation
+
+To install, run `devtools::install_github('karchern/ggunileg')`. If you
+don’t have devtools installed, run `install.packages('devtools')` first.
