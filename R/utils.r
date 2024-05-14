@@ -13,10 +13,10 @@ manual_shape_pal <- function(num_shape_levels) {
 #' (an approach I often use to distinguish > 6 or so different groups).
 #'
 #' @param num_shape_levels number of distinct shapes to use
-#' @param colorPalette expects a color scale (such as those provided by scales::hue_pal() or function(x) RColorBrewer::brewer.pal(x, "Set1")),
+#' @param color_palette expects a color scale (such as those provided by scales::hue_pal() or function(x) RColorBrewer::brewer.pal(x, "Set1")),
 #' @return NULL
 #' @export
-scale_color_highres <- function(num_shape_levels, colorPalette = scales::hue_pal(), ...) {
+scale_color_highres <- function(num_shape_levels, color_palette = scales::hue_pal(), ...) {
     list(
         discrete_scale(
             "color",
